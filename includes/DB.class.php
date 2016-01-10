@@ -52,6 +52,9 @@
 			
 			//选择数据库
 			$this->useDbname($this->dbName);
+			
+			//获取当前表的所有字段信息
+			$this->getFields();
 		}
 		/**
 		 * 连接数据库
@@ -215,4 +218,35 @@
 			return $this->prefix.$this->table;
 		}
 		
+		
+		private function getFields(){
+			//组织sql语句
+			$query="desc {$this->getTableName()} ";
+			
+			$res=$this->query($query);
+			
+			foreach ($res as $field){
+				//判断当前字段是否为主键
+				$this->fields[]=$field['Field'];
+				if($field['key']=='PRI'){
+					$this->fields['_PK']=$field['Field'];
+				}
+			}
+		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

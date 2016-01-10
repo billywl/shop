@@ -2,6 +2,7 @@
 	//商品处理类
 class Goods extends DB{
 	protected $table='goods';
+	protected $fields;
 	
 	/**
 	 * 获取全部商品信息
@@ -114,8 +115,11 @@ class Goods extends DB{
 		$fields = $values = '';
 		foreach($goodsinfo as $key => $value){
 			//拼凑字段和值列表
-			$fields .= $key . ',';
-			$values .= $value . ',';
+			//验证字段是否存在
+			if(in_array($key, $this->fields)){
+				$fields .= $key . ',';
+				$values .= $value . ',';
+			}
 		}
 	
 		//去除最右边的逗号
