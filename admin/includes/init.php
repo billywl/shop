@@ -28,7 +28,10 @@
 	$config=include_once HOME_CONF.'/config.php';
 	
 	//开启session
-	@session_start();
+	//修改session机制
+	$session = new Session();
+
+	//@session_start();
 	
 	//验证用户
 	if (basename($_SERVER['SCRIPT_NAME'])&&($act=='login'|| $act=='captcha'|| $act=='signin')){

@@ -114,6 +114,7 @@
 		*/
 		public static function checkCaptcha($captcha){
 			//验证码不区分大小写
+			//var_dump($_SESSION['captcha']);
 			return (strtolower($captcha) === strtolower($_SESSION['captcha']));
 		}
 		

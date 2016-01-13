@@ -22,11 +22,12 @@
 			//missing data,return 信息不完整,返回到登录界面
 			admin_redirect('privilege.php','帐号密码不能为空',3);
 		}
-		
+		//echo $captcha;
 		//连接数据库前连接验证码
 		if(empty($captcha)){
 			admin_redirect('privilege.php','必须先填写验证码',3);
 		}
+		//($_SESSION['captcha']);
 		if(!Captcha::checkCaptcha($captcha)){
 			admin_redirect('privilege.php','验证码不正确',3);
 			

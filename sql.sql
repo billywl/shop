@@ -91,3 +91,11 @@ update sh_goods set g_is_sale=round(rand()),g_is_pro=round(rand()),g_is_new=roun
 
 -- 增加字段
 alter table sh_goods add column g_is_delete tinyint default 0 comment '商品是否被删除,默认为0表示正常';
+
+-- 增加session表
+create table sh_session(
+s_id char(32) not null,
+s_info text,
+s_expire int,
+unique key(s_id)
+)charset utf8;
