@@ -233,6 +233,13 @@
 				}
 			}
 		}
+		
+		/**
+		 * 关闭链接
+		 */
+		public function close(){
+			mysqli_close($this->link);
+		}
 	}
 	
 	

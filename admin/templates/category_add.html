@@ -31,7 +31,7 @@
           <select name="parent_id">
           <option value="0">顶级分类</option>
           <?php foreach($categories as $category):?>
-      	    <option value=<?php echo $category['c_id'] ?>>
+      	    <option value='<?php echo $category['c_id'] ?>'>
       	    	<?php echo str_repeat('|----',$category['level']),$category['c_name'] ?>
       	    </option>
           <?php endforeach;?>

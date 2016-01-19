@@ -47,7 +47,7 @@
     <td><?php echo $list['g_name']; ?></td>
     <td><?php echo $list['g_sn']; ?></td>
     <td><?php echo $list['g_price']; ?></td>
-    <td><img src="images/<?php echo $list['g_is_sale']?'yes':'no'; ?>.gif" <!-- onclick="change(this) -->" /></td> 
+    <td><img src="images/<?php echo $list['g_is_sale']?'yes':'no'; ?>.gif"  /></td> 
     <td><img src="images/<?php echo $list['g_is_pro']?'yes':'no'; ?>.gif" /></td>
     <td><img src="images/<?php echo $list['g_is_new']?'yes':'no'; ?>.gif" /></td>
     <td><img src="images/<?php echo $list['g_is_hot']?'yes':'no'; ?>.gif" /></td>
@@ -55,7 +55,7 @@
     <td align="right"><?php echo $list['g_inv']; ?></td>
     <td><img src="<?php echo $list['g_thumb_img']; ?>" /></td>
     <td width="24%" align="center">
-      <a href="" title="编辑">编辑</a> |
+      <a href="" title="编辑">编辑</a> 
       <a href="goods.php?act=remove&id=<?php echo $list['g_id']; ?> " title="移除" onclick="return confirm('你确定要将<?php echo $list['g_name']; ?>放入回收站么？');">移除</a>
     </td>
   </tr>
